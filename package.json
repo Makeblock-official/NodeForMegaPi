@@ -18,7 +18,7 @@
   ],
  "dependencies" :
   { 
-	"serialport" : "=2.0.0"
+	"serialport" : "^2.0.0"
   },
   "author": "ander@makeblock.cc",
   "license": "MIT",
