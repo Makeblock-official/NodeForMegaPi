@@ -275,8 +275,6 @@ MegaPi.prototype.encoderMotorSpeed = function(slot,callback){
   write([id,action,device,0,slot,2]);
 }
 
-
-
 MegaPi.prototype.stepperMotorRun = function(port,speed){
   var id = 0;
   var action = 2;
@@ -329,7 +327,7 @@ MegaPi.prototype.stepperMotorSpeed = function(port,callback){
 MegaPi.prototype.rgbledDisplay = function(port,slot,index,r,g,b){
   var id = 0;
   var action = 2;
-  var device = 18;
+  var device = 8;
   write([id,action,device,port,slot,index,r,g,b]);
 }
 MegaPi.prototype.rgbledShow = function(port,slot){
