@@ -40,17 +40,17 @@ function MegaPi() {
             position += 1;//# 1 byte 2 float 3 short 4 len+string 5 double 6 long
 
             switch (type) {
-              case 1:            
-                  value = buffer[position];            
+              case 1:
+                value = buffer[position];
                 break;
-              case 2:          
-                  value = getFloatFromBytes([buffer[position], buffer[position + 1], buffer[position + 2], buffer[position + 3]]);         
+              case 2:
+                value = getFloatFromBytes([buffer[position], buffer[position + 1], buffer[position + 2], buffer[position + 3]]);
                 break;
-              case 3:        
-                  value = getShortFromBytes([buffer[position], buffer[position + 1]]);        
+              case 3:
+                value = getShortFromBytes([buffer[position], buffer[position + 1]]);
                 break;
-              case 6:         
-                  value = getLongFromBytes([buffer[position], buffer[position + 1], buffer[position + 2], buffer[position + 3]]);
+              case 6:
+                value = getLongFromBytes([buffer[position], buffer[position + 1], buffer[position + 2], buffer[position + 3]]);
                 break;
             }
             if (type <= 6) {
@@ -311,16 +311,16 @@ MegaPi.prototype.stepperMotorSpeed = function (port, callback) {
   write([id, action, device, port, 2]);
 }
 
-MegaPi.prototype.rgbledDisplay = function (port, slot, index, r, g, b) {
+MegaPi.prototype.rgbledDisplay = function (port, slot, index, red, green, blue) {
   var id = 0;
   var action = 2;
   var device = 8;
-  write([id, action, device, port, slot, index, r, g, b]);
+  write([id, action, device, port, slot, index, parseInt(red), parseInt(green), parseInt(blue)]);
 }
 MegaPi.prototype.rgbledShow = function (port, slot) {
   var id = 0;
   var action = 2;
-  var device = 19;
+  var device = 8;
   write([id, action, device, port, slot]);
 }
 MegaPi.prototype.sevenSegmentDisplay = function (port, value) {
