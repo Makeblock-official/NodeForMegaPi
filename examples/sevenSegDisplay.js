@@ -1,5 +1,5 @@
 var MegaPi = require("../megapi").MegaPi;
-var bot = new MegaPi("/dev/ttyS0",onStart);
+var bot = new MegaPi("/dev/ttyAMA0",onStart);
 
 var t = 0.0;
 function loop(){

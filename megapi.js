@@ -10,7 +10,7 @@ var isParseStartIndex;
 var self;
 function MegaPi() {
   self = this;
-  var port = (arguments[0] && (typeof arguments[0] == "string")) ? arguments[0] : "/dev/ttyS0";
+  var port = (arguments[0] && (typeof arguments[0] == "string")) ? arguments[0] : "/dev/ttyAMA0";
   var onStart = (arguments[0] && (typeof arguments[0] != "string")) ? arguments[0] : (arguments[1] ? arguments[1] : function () { });
   serialPort = new SerialPort(port, {
     baudrate: 115200
