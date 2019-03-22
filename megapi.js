@@ -210,10 +210,10 @@ MegaPi.prototype.buttonRead = function(port,callback){
   selectors["callback_"+id] = callback;
   write([id,action,device,port]);
 }
-MegaPi.prototype.gyroRead = function(axis,callback){
+MegaPi.prototype.gyroRead = function(port, axis,callback){
   var action = 1;
   var device = 6;
-  var id = ((port<<4)+device)&0xff;
+  var id = ((port+axis<<4)+device)&0xff;
   selectors["callback_"+id] = callback;
   write([id,action,device,port,axis]);
 }
